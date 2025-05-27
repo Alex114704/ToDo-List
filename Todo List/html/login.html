@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Todo List</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+    <div id="viewModal" class="modal">
+    <div class="container-view">
+        <span class="close-btn-view" onclick="closeViewModal()">&times;</span>
+        <h1 class="Title">Task Details</h1>
+        <div class="view-content">
+            <p><strong>Task Name:</strong> <span id="viewTaskName"></span></p>
+            <p><strong>Start Date:</strong> <span id="viewStartDate"></span></p>
+            <p><strong>End Date:</strong> <span id="viewEndDate"></span></p>
+            <p><strong>Description:</strong> <span id="viewDescription"></span></p>
+        </div>
+        <div class="edit-buttons">
+            <button class="cancel-btn" type="button" onclick="closeViewModal()">Close</button>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

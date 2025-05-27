@@ -1,0 +1,1 @@
+const detailRoutes = require('./routes/details.routes');
