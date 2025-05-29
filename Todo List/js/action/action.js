@@ -2,7 +2,7 @@
 async function addTask() {
     const user = JSON.parse(localStorage.getItem('user'));
     if (!user) {
-        showToast('Please login to add task');
+        showToast('Please login to add task', 'error');
         // alert('Vui lòng đăng nhập để thêm task');
         openLoginModal();
         return;
@@ -12,7 +12,7 @@ async function addTask() {
     const taskText = taskInput.value.trim();
 
     if (!taskText) {
-        alert('Vui lòng nhập nội dung task');
+        showToast('Please enter a task', 'error');
         return;
     }
 
@@ -91,7 +91,7 @@ async function confirmDelete() {
         if (response.ok) {
             closeDeleteDialog();
             loadTasks();
-            showToast('Xóa task thành công!', 'success');
+            showToast('Delete task success!', 'success');
         } else {
             const data = await response.json();
             showToast(data.message, 'error');

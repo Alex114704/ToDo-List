@@ -4,6 +4,7 @@ const connection = require('./config/database');
 const userRoutes = require('./routes/user.routes');
 const taskRoutes = require('./routes/task.routes');
 const detailRoutes = require('./routes/details.routes');
+const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -11,6 +12,10 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../Todo List/html/home.html'));
+});
+app.use(express.static(path.join(__dirname, '../Todo List')));
 // Routes
 app.use('/api/users', userRoutes);
 app.use('/api/tasks', taskRoutes);
