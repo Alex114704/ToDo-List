@@ -13,9 +13,9 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../Todo List/html/home.html'));
+  res.sendFile(path.join(__dirname, '../frontend/html/home.html'));
 });
-app.use(express.static(path.join(__dirname, '../Todo List')));
+app.use(express.static(path.join(__dirname, '../frontend')));
 // Routes
 app.use('/api/users', userRoutes);
 app.use('/api/tasks', taskRoutes);

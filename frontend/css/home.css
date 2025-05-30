@@ -640,30 +640,40 @@ footer {
 }
 
 .dialog-buttons .delete-btn {
-    background: #ffffff;
+    background: linear-gradient(to top left, red 50%, #ffffff 50%);
+    background-size: 250% 250%;
+    background-position: top left;
     color: red;
     border: 1px solid #dc3545;
     padding: 10px 25px;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.5s ease-out;
+    font-weight: bold;
 }
 
 .dialog-buttons .delete-btn:hover{
-    background: #dc3545;
+    background-position: bottom right;
+    cursor: pointer;
     color: white;
 }
 
 .dialog-buttons .cancel-btn {
-    background: #ffffff;
+     background: linear-gradient(to bottom right, #007bff 50%, #ffffff 50%);
+    background-size: 250% 250%;
+    background-position: bottom right;
     color: grey;
     border: none;
     padding: 10px 25px;
     border-radius: 5px;
     cursor: pointer;
     border: 1px solid blue;
+    transition: all 0.5s ease-out;
+    font-weight: bold;
 }
 .dialog-buttons .cancel-btn:hover {
-    background: #007bff;
+    background-position: top left;
+    cursor: pointer;
     color: white;
 }
 /* View Modal Styles */
@@ -769,4 +779,87 @@ footer {
     .view-content strong {
         min-width: 100px;
     }
+}
+/* Footer Styles */
+.main-footer {
+    background: #FFA827;
+    color: #000000;
+    padding: 40px 0 20px 0;
+    font-size: 15px;
+    margin-top: 40px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.footer-col {
+    min-width: 140px;
+    margin-bottom: 20px;
+    text-align: left; 
+
+}
+
+.footer-col h3, .footer-col h4 {
+    color: #000000;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left; /* Đảm bảo căn trái */
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+    color: #000000;
+    cursor: pointer;
+}
+.footer-col ul li:hover{
+    color: #fff;
+}
+.footer-col.social .footer-social {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.footer-social a i {
+    font-size: 1.1rem;   /* Tăng kích thước icon, có thể chỉnh lớn hơn nếu muốn */
+    color: #000000;      /* Màu tím nhạt như mẫu */
+    margin-right: 8px;
+    transition: color 0.2s, transform 0.2s;
+    vertical-align: middle;
+}
+
+.footer-social a i:hover {
+    color: #fff;
+    transform: scale(1.15);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding-left: 30px;
+    }
+    .footer-col {
+        margin-bottom: 25px;
+    }
+}
+::selection{
+    background-color: #FFA827; /* Màu nền khi chọn */
+    color: black; /* Màu chữ khi chọn */
 }
